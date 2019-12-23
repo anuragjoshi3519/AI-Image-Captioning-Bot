@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {%if title %}
+            <title>{{title}}</title>
+        {% else %}
+            <title>CaptionIt</title>
+        {% endif %}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha256-9mbkOfVho3ZPXfM7W8sV2SndrGDuh7wuyLjtsWeTI1Q=" crossorigin="anonymous" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.js" integrity="sha256-qs5p0BFSqSvrstBxPvex+zdyrzcyGdHNeNmAirO2zc0=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='layout.css')}}"/>
+    </head>
+    <body>
+        <div class="main-div">
+            <div class='header-div'>
+                <p>Image Captioning Bot</p>
+            </div>
+            <div class="form-div">
+                <form class="ui form" enctype="multipart/form-data" action="/home" method="POST">
+                    <div class="input-div">
+                        <div>
+                            <input type="file" name='imgFile' placeholder="No file selected"/>
+                        </div>
+                        <div>
+                            <button class="ui button positive" type="submit" >Upload File</button>
+                        </div>
+                    </div>
+                    {%if imagePath and imgCaption %}
+                        <div>
+                            <img class="caption-img" src="{{url_for('static',filename=imagePath)}}" width="500" height="500">
+                        </div>
+                        <div>
+                            <p class="caption">{{imgCaption}}</p>
+                        </div>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
