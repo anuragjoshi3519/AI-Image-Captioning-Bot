@@ -4,11 +4,15 @@ import os
 
 app = Flask(__name__)
 
-@app.route('/',methods=['GET','POST'])
-@app.route('/home',methods=['GET','POST'])
+@app.route('/')
+@app.route('/home')
 def home():
+    return render_template('index.html',title='CaptionIt')
+
+@app.route('/upload',methods=['POST'])
+def upload():
     path=None
-    caption="sd"
+    caption=None
     if request.method=='POST':
         if request.files.get('imgFile'):
             image = request.files['imgFile']

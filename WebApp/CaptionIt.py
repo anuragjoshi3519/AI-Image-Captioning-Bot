@@ -1,9 +1,9 @@
 import numpy as np
 import pickle
-from keras.models import load_model
-from keras.preprocessing import image
-from keras.applications.resnet50 import preprocess_input
-from keras.preprocessing.sequence import pad_sequences
+from tensorflow.keras.models import load_model
+from tensorflow.keras.preprocessing import image
+from tensorflow.keras.applications.resnet50 import preprocess_input
+from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 import warnings
 warnings.filterwarnings('ignore')
@@ -19,9 +19,9 @@ with open('./resources/idx2word.pkl','rb') as f:
 
 maxlen = 40
 model = load_model('./models_weights/model.h5')
-model._make_predict_function()
+#model._make_predict_function()
 featureExtract_model = load_model("./resources/resNet50.h5")
-featureExtract_model._make_predict_function()
+#featureExtract_model._make_predict_function()
 
 def preprocess_image(img_path):
     img = image.load_img(img_path,target_size=(224,224))
