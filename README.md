@@ -1,8 +1,8 @@
 # Image Captioning Bot
 
-**Flickr8k Image dataset has been used for training the model.**
+**Flickr30k Image dataset has been used for training the model.**
 
-Click [here](https://www.kaggle.com/shadabhussain/flickr8k/download) to download the dataset.
+Click [here](https://www.kaggle.com/hsankesara/flickr-image-dataset/download) to download the dataset.
 
 
 - Pretrained ResNet50 (using imagenet weights) has been used for extracting image features.

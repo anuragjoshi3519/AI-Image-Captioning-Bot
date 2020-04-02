@@ -17,8 +17,8 @@ with open('./resources/idx2word.pkl','rb') as f:
     idx2word=pickle.load(f)
 
 
-maxlen = 40
-model = load_model('./models_weights/model.h5')
+maxlen = 84
+model = load_model('./models_weights/model_6.h5')
 #model._make_predict_function()
 featureExtract_model = load_model("./resources/resNet50.h5")
 #featureExtract_model._make_predict_function()

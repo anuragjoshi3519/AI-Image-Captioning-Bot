@@ -1,4 +1,5 @@
 flickr30k/
-glove.6B.50d.txt
 WebApp/env/
-Test-Images/
+resNet50.h5
+encoded_train_images.pkl
+glove.6B.50d.txt
